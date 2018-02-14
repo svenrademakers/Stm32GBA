@@ -1,2 +1,2 @@
 @echo off
-Sharpmake.Application.exe /sources(@"main.sharpmake.cs")
+Sharpmake.Application.exe /sources(@"sharpmake/main.sharpmake.cs")
