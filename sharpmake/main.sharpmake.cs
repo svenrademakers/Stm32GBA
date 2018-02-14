@@ -15,7 +15,7 @@ class GBAEmu : Solution
     [Configure]
     public void ConfigureAll(Solution.Configuration conf, Target target)
     {
-        conf.SolutionPath = @"[solution.SharpmakeCsPath]\generated";
+        conf.SolutionPath = @"[solution.SharpmakeCsPath]\..\build_vs";
         conf.AddProject<GBAEmu_Application>(target);
     }
 	
@@ -31,7 +31,7 @@ class GBAEmu_Application : Project
 {
     public GBAEmu_Application()
     {
-        SourceRootPath = @"[project.SharpmakeCsPath]";
+        SourceRootPath = @"[project.SharpmakeCsPath]\..";
 
         AddTargets(new Target(
             Platform.win32 | Platform.win64,
@@ -42,6 +42,6 @@ class GBAEmu_Application : Project
 	[Configure]
 	public void ConfigureAll(Project.Configuration conf, Target target)
 	{
-		conf.ProjectPath = Path.Combine("[project.SharpmakeCsPath]", "generated");
+        conf.ProjectPath = @"[project.SharpmakeCsPath]\..\build_vs";
 	}
 }

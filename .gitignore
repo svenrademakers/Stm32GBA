@@ -260,3 +260,7 @@ paket-files/
 __pycache__/
 *.pyc
 *.filters
+sharpmake/generated/
+generated/
+gbaemu.sln
+build_vs/
