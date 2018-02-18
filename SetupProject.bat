@@ -6,5 +6,5 @@ if exist build (
 )
 
 chdir build
-cmake .. -DCMAKE_TOOLCHAIN_FILE=toolchain-STM32F4.cmake -G"MinGW Makefiles"
+cmake .. -DCMAKE_TOOLCHAIN_FILE=STM32F4/toolchain-STM32F4.cmake -G"MinGW Makefiles"
 pause

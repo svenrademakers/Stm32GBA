@@ -3,7 +3,7 @@
         .fpu softvfp
         .thumb
         
-        .global _start
+        .global	_start
         
         _start:
         .word   _estack
