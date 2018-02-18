@@ -1,4 +1,4 @@
-#include "../hal_interfaces/uart.h"
+#include "uart.h"
 
 void uart_init(UartDevice uartDevice, uart_receive_data dataReceiveCb)
 {}
