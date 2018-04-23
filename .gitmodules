@@ -1,3 +1,3 @@
-[submodule "Stixx"]
+[submodule "emu/Stixx"]
 	path = emu/Stixx
 	url = git@github.com:svenrademakers/Stixx.git

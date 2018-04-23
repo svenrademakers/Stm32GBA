@@ -18,4 +18,8 @@ target_link_libraries(GbaEmulator Stixx)
 if(MICROTESTS)
 	include(Stixx/cmake_helpers/AddMicroTest.cmake)
 	AddMicroTest(GbaEmulator ${CMAKE_CURRENT_SOURCE_DIR}/test/TestGbaSimulator.cpp)
+		
+	if(MSVC)
+		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
+	endif(MSVC)
 endif()
