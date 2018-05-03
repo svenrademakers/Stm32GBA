@@ -1,4 +1,4 @@
-ENTRY(_start)
+ENTRY(Reset_Handler)
 
 MEMORY
 {
@@ -23,6 +23,7 @@ SECTIONS
   
   .text :
   {
+	. = ALIGN(4);
     *(.text) 
     *(.rodata)
     *(.rodata*)
@@ -31,6 +32,7 @@ SECTIONS
 
   .data :
   {
+	. = ALIGN(4);
     _sdata = .;
     *(.data)
     *(.data*)
@@ -40,6 +42,7 @@ SECTIONS
 
   .bss (NOLOAD) :
   {
+	. = ALIGN(4);
     _sbss = .;
     *(.bss)
     . = ALIGN(4);
