@@ -29,4 +29,4 @@ add_custom_target("${PROJECT_NAME}_map"
    ALL arm-none-eabi-objdump -x ./${PROJECT_NAME}.elf > "${PROJECT_NAME}.map"
    DEPENDS ${PROJECT_NAME})
     
-install(CODE "execute_process(COMMAND ST-LINK_CLI.exe -P ${PROJECT_NAME}.bin )")
+install(CODE "execute_process(COMMAND ST-LINK_CLI.exe -P ${PROJECT_NAME}.bin 0x08000000 )")

@@ -6,7 +6,7 @@
 .global  Reset_Handler
 .global  isr_vector
 
-.section.isr_vector, "a", %progbits
+.section .isr_vector, "a", %progbits
 .word  _estack
 .word  Reset_Handler
 .word  NMI_Handler
