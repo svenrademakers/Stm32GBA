@@ -12,7 +12,15 @@ _ramstart = ORIGIN(ram);
 
 SECTIONS
 {
-  . = 0x00;
+  . = 0x0;
+  
+  .isr_vector :
+  {
+    . = ALIGN(4);
+    KEEP(*(.isr_vector)) /* reset vector + dummy isr handlers */
+    . = ALIGN(4);
+  } >flash
+  
   .text :
   {
     *(.text) 
@@ -24,12 +32,11 @@ SECTIONS
   .data :
   {
     _sdata = .;
-    KEEP(*(.ramvector)); 
     *(.data)
     *(.data*)
     . = ALIGN(4);
     _edata = .;
-  } > flash AT>ram
+  } >ram AT> flash
 
   .bss (NOLOAD) :
   {
