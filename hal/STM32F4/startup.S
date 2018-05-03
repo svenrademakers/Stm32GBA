@@ -459,6 +459,6 @@ Reset_Handler :
   bne     1b
 
   @ going to main
-  b       main
+  bl      main
   b       .
 .size  Reset_Handler, .-Reset_Handler
