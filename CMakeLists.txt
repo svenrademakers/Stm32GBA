@@ -3,19 +3,15 @@ project(Stm32GBA C ASM)
 
 #if (CMAKE_BUILD_TYPE matches "Debug")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Og")
-
 #endif()
-
 #set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Ofast")
-
-add_subdirectory(hal)
 
 add_executable(${PROJECT_NAME}
 	main.c)
-target_link_libraries(${PROJECT_NAME} STM32F4_platform)
+
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${PROJECT_NAME}.elf")
 
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ${CMAKE_SOURCE_DIR}/hal/STM32F4/stm32f4.ld -nostartfiles")
+#set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ${CMAKE_SOURCE_DIR}/stm32f4.ld ")
 
 add_custom_target("${PROJECT_NAME}_bin"
     ALL arm-none-eabi-objcopy ./${PROJECT_NAME}.elf -S -Obinary ./${PROJECT_NAME}.bin
